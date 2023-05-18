@@ -16,6 +16,12 @@ export class Wishlist {
   @Column({ type: "boolean", default: false })
   bought: boolean;
 
+  @Column({ type: "text" })
+  url: string;
+
+  @Column({ length: 32 })
+  name: string;
+
   @CreateDateColumn({ type: "date" })
   createdAt: string;
 

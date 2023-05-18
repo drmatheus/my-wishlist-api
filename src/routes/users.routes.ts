@@ -3,7 +3,7 @@ import {
   deleteUsersController,
   patchUsersController,
   postUsersController,
-} from "../controllers/user.controller";
+} from "../controllers/user.controllers";
 import {
   verifyResquestData,
   verifyEmailUnique,

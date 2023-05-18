@@ -16,7 +16,7 @@ export const postUsersController = async (
 ): Promise<Response> => {
   const newUserData: TPostUser = req.body;
   const newUser: TReturnUser = await postUsersService(newUserData);
-  return res.status(201).send(newUser);
+  return res.status(201).json(newUser);
 };
 
 export const patchUsersController = async (
@@ -30,7 +30,7 @@ export const patchUsersController = async (
     patchUserData as DeepPartial<User>
   );
 
-  return res.status(200).send(attUser);
+  return res.status(200).json(attUser);
 };
 
 export const deleteUsersController = async (
@@ -38,9 +38,6 @@ export const deleteUsersController = async (
   res: Response
 ): Promise<Response> => {
   const userId: string = res.locals.userId;
-  console.log("====================================");
-  console.log(userId);
-  console.log("====================================");
   await deleteUsersService(userId);
   return res.status(204).json();
 };
